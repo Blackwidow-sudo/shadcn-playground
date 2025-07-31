@@ -6,14 +6,18 @@
 	import { Calendar } from '$lib/components/ui/calendar/index.js';
 	import * as Popover from '$lib/components/ui/popover/index.js';
 
-    let { locale = 'de' } = $props()
+    let { locale = 'de', value = $bindable() }: {
+		locale?: string,
+		value: DateValue | undefined
+	} = $props()
 
 	const df = new DateFormatter(locale, {
 		dateStyle: 'long'
 	});
-
-	let value = $state<DateValue | undefined>();
+	
 	let contentRef = $state<HTMLElement | null>(null);
+
+	$inspect(value)
 </script>
 
 <Popover.Root>
