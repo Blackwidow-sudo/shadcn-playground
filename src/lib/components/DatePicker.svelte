@@ -8,7 +8,7 @@
 
     let { locale = 'de', value = $bindable() }: {
 		locale?: string,
-		value: DateValue | undefined
+		value?: DateValue | undefined
 	} = $props()
 
 	const df = new DateFormatter(locale, {
